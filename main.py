@@ -26,11 +26,11 @@ def get_weather():
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
-  delta = today - datetime.strptime(start_date, "%Y-%m-%d")
+  delta = today - datetime.strptime(start_date, "2022-6-11")
   return delta.days
 
 def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+  next = datetime.strptime(str(date.today().year) + "-" + birthday, "1993-5-8")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
@@ -45,7 +45,7 @@ def get_random_color():
   return "#%06x" % random.randint(0, 0xFFFFFF)
 
 
-client = WeChatClient(app_id, app_secret)
+client = WeChatClient(wx8f8d5485f7be8a0e, 2f1c88eb63645cfb4da6168f73113ebe)
 
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
